@@ -48,7 +48,7 @@ public final class LedService extends ILedService.Stub {
      */
     public boolean setOn(int led) {
         Log.i("MokoidPlatform", "LED On");
-	return _set_on(led);
+	return _set_on(led, "hello");
     }
 
     public boolean setOff(int led) {
