@@ -57,6 +57,6 @@ public final class LedService extends ILedService.Stub {
     }
 
     private static native boolean _init();
-    private static native boolean _set_on(int led);
+    private static native boolean _set_on(int led, String str);
     private static native boolean _set_off(int led);
 }
