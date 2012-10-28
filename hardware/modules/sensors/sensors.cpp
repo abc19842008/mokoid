@@ -96,7 +96,8 @@ static native_handle_t* open_data_source(struct sensors_control_device_t *dev)
 	} 
 	
     LOGD("open_data_source:	sInputFD = %d\n",fd);	
-	
+
+    //first arg: number of argument
     native_handle_t* handle = native_handle_create(1, 0);
     handle->data[0] = fd;
     return handle;
@@ -206,7 +207,7 @@ static int data_poll(struct sensors_data_device_t *dev, sensors_data_t* data)
 	Z_value = (signed char)buff[2];
 	
 
-//?¼ÆËã¹«Ê½ SENSITIVITY 256  
+//?ï¿½ï¿½ï¿½ã¹«Ê½ SENSITIVITY 256  
 
 	//data->vector.v[0] = (float)(X_value-ZERO_G_OFFSET)/SENSITIVITY*GRAVITY_EARTH;
 	//data->vector.v[1] = (float)(Y_value-ZERO_G_OFFSET)/SENSITIVITY*GRAVITY_EARTH;
@@ -311,14 +312,14 @@ int to_get_sensors_list(struct sensors_module_t* module, struct sensor_t const**
 	lsensors = (sensor_t*)malloc(sizeof(*lsensors));
 	memset(lsensors, 0, sizeof(*lsensors));
 
-	//ÕâÀïÊÇÉèÖÃ´«¸ÐÆ÷µÄÒ»Ð©²ÎÊýµÄ	
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½ï¿½	
 	lsensors->name = "g-sensors";
 	lsensors->vendor = "meizu";
 	lsensors->version = 0;
 	lsensors->handle = NULL;
-	lsensors->type = SENSOR_TYPE_ACCELEROMETER;  //´«¸ÐÆ÷ÀàÐÍ
+	lsensors->type = SENSOR_TYPE_ACCELEROMETER;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	lsensors->power = 1;
-	lsensors->maxRange = 2*GRAVITY_EARTH;   //×î´óÁ¿³Ì
+	lsensors->maxRange = 2*GRAVITY_EARTH;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	lsensors->resolution = 0.001*GRAVITY_EARTH;
 	
 
